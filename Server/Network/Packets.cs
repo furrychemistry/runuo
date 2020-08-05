@@ -104,16 +104,13 @@ namespace Server.Network
 		/*public DamagePacket( Mobile m, int amount ) : base( 0xBF )
 		{
 			EnsureCapacity( 11 );
-
 			m_Stream.Write( (short) 0x22 );
 			m_Stream.Write( (byte) 1 );
 			m_Stream.Write( (int) m.Serial );
-
 			if ( amount > 255 )
 				amount = 255;
 			else if ( amount < 0 )
 				amount = 0;
-
 			m_Stream.Write( (byte)amount );
 		}*/
 	}
@@ -1198,11 +1195,8 @@ namespace Server.Network
 				m_Stream.Write( (byte) 0 );
 			/*} else if (  ) {
 				m_Stream.Write( (byte) 0x01 );
-
 				m_Stream.Write( (int) item.Serial );
-
 				m_Stream.Write( (short) itemID ); 
-
 				m_Stream.Write( (byte) item.Direction );*/
 			} else {
 				m_Stream.Write( (byte) 0x00 );
@@ -1253,11 +1247,8 @@ namespace Server.Network
 				m_Stream.Write( (byte) 0 );
 			/*} else if (  ) {
 				m_Stream.Write( (byte) 0x01 );
-
 				m_Stream.Write( (int) item.Serial );
-
 				m_Stream.Write( (ushort) itemID ); 
-
 				m_Stream.Write( (byte) item.Direction );*/
 			} else {
 				m_Stream.Write( (byte) 0x00 );
@@ -4639,8 +4630,6 @@ namespace Server.Network
 
 		public void OnSend()
 		{
-			Core.Set();
-
 			lock (this) {
 				if ((m_State & (State.Acquired | State.Static)) == 0)
 					Free();

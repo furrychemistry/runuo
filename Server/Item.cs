@@ -3045,8 +3045,6 @@ namespace Server
 					m_DeltaQueue.Add(this);
 				}
 			}
-
-			Core.Set();
 		}
 
 		public void RemDelta( ItemDelta flags )
@@ -3820,7 +3818,7 @@ namespace Server
 
 		public virtual bool OnDroppedToMobile( Mobile from, Mobile target )
 		{
-			if( Nontransferable && from.Player && from.AccessLevel < AccessLevel.GameMaster )
+			if( Nontransferable && from.Player )
 			{
 				HandleInvalidTransfer( from );
 				return false;
@@ -3853,7 +3851,7 @@ namespace Server
 			{
 				return false;
 			}
-			else if( Nontransferable && from.Player && target != from.Backpack && from.AccessLevel < AccessLevel.GameMaster )
+			else if( Nontransferable && from.Player && target != from.Backpack )
 			{
 				HandleInvalidTransfer( from );
 				return false;
@@ -3874,7 +3872,7 @@ namespace Server
 				return false;
 			else if ( !from.OnDroppedItemOnto( this, target ) )
 				return false;
-			else if( Nontransferable && from.Player && target != from.Backpack && from.AccessLevel < AccessLevel.GameMaster )
+			else if( Nontransferable && from.Player && target != from.Backpack )
 			{
 				HandleInvalidTransfer( from );
 				return false;
@@ -3908,7 +3906,7 @@ namespace Server
 
 		public virtual bool OnDroppedToWorld( Mobile from, Point3D p )
 		{
-			if( Nontransferable && from.Player && from.AccessLevel < AccessLevel.GameMaster )
+			if( Nontransferable && from.Player )
 			{
 				HandleInvalidTransfer( from );
 				return false;
@@ -4353,10 +4351,8 @@ namespace Server
 			return reg.CheckAccessibility( this, check );
 
 			/*SecureTradeContainer cont = GetSecureTradeCont();
-
 			if ( cont != null && !cont.IsChildOf( check ) )
 				return false;
-
 			return true;*/
 		}
 

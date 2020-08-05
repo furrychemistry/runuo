@@ -143,7 +143,7 @@ namespace Server.Factions
 				if ( m_Bandage == null )
 					return TimeSpan.MaxValue;
 
-				TimeSpan ts = ( m_BandageStart + m_Bandage.Timer.Delay ) - DateTime.UtcNow;
+				TimeSpan ts = m_Bandage.Timer.Remaining;
 
 				if ( ts < TimeSpan.FromSeconds( -1.0 ) )
 				{
@@ -412,9 +412,7 @@ namespace Server.Factions
 			{
 				if ( m_Mobile.Target != null )
 					m_Mobile.Target.Cancel( m_Mobile, TargetCancelType.Canceled );
-
 				new TeleportSpell( m_Mobile, null ).Cast();
-
 				m_Mobile.DebugSay( "I am stuck, I'm going to try teleporting away" );
 			}
 			else*/ if ( AcquireFocusMob( m_Mobile.RangePerception, m_Mobile.FightMode, false, false, true ) )

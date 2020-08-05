@@ -268,16 +268,13 @@ namespace Server.Gumps
 					AddLabel( 150, 350, LabelHue, os );
 
 					/*string str;
-
 					try{ str = FormatTimeSpan( Core.Process.TotalProcessorTime ); }
 					catch{ str = "(unable to retrieve)"; }
-
 					AddLabel( 20, 330, LabelHue, "Process Time:" );
 					AddLabel( 250, 330, LabelHue, str );*/
 
 					/*try{ str = Core.Process.PriorityClass.ToString(); }
 					catch{ str = "(unable to retrieve)"; }
-
 					AddLabel( 20, 350, LabelHue, "Process Priority:" );
 					AddLabel( 250, 350, LabelHue, str );*/
 
@@ -288,9 +285,11 @@ namespace Server.Gumps
 				}
 				case AdminGumpPage.Information_Perf:
 				{
+					/*
 					AddLabel( 20, 130, LabelHue, "Cycles Per Second:" );
 					AddLabel( 40, 150, LabelHue, "Current: " + Core.CyclesPerSecond.ToString( "N2" ) );
 					AddLabel( 40, 170, LabelHue, "Average: " + Core.AverageCPS.ToString( "N2" ) );
+					*/
 
 					StringBuilder sb = new StringBuilder();
 

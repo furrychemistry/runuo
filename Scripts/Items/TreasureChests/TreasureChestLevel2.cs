@@ -49,12 +49,12 @@ namespace Server.Items
 					break;
 
 				case 6:// Keg
-					this.ItemID = ( UseFirstItemId ? 0xe7f : 0xe7f );
+					this.ItemID = 0xe7f;
 					this.GumpID = 0x3e;
 					break;
 
 				case 7:// Barrel
-					this.ItemID = ( UseFirstItemId ? 0xe77 : 0xe77 );
+					this.ItemID = ( UseFirstItemId ? 0xe77 : 0x0FAE );
 					this.GumpID = 0x3e;
 					break;
 			}

@@ -1185,7 +1185,7 @@ namespace Server.Items
 						if ( weapon != null )
 						{
 							defender.FixedParticles(0x3779, 1, 15, 0x158B, 0x0, 0x3, EffectLayer.Waist);
-							weapon.OnSwing( defender, attacker );
+							weapon.OnSwing( attacker, defender );
 						}
 
 						CounterAttack.StopCountering( defender );
