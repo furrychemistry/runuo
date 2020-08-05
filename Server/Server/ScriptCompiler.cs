@@ -702,8 +702,12 @@ namespace Server
 
 		public static void GetScripts( List<string> list, string path, string filter )
 		{
-			foreach( string dir in Directory.GetDirectories( path ) )
-				GetScripts( list, dir, filter );
+			string ignoreDir = Path.Combine(Core.BaseDirectory, "Scripts", "obj");
+			foreach (string dir in Directory.GetDirectories(path))
+			{
+				if (!dir.Contains(ignoreDir))
+					GetScripts(list, dir, filter);
+			}
 
 			list.AddRange( Directory.GetFiles( path, filter ) );
 		}

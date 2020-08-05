@@ -35,7 +35,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\bin</OutputPath>
+    <OutputPath>..\</OutputPath>
     <DefineConstants>TRACE;DEBUG;NEWTIMERS;NEWPARENT</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugType>full</DebugType>
@@ -46,7 +46,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>..\bin</OutputPath>
+    <OutputPath>..\</OutputPath>
     <DefineConstants>TRACE;NEWTIMERS;NEWPARENT</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
@@ -58,9 +58,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OrbServerSDK">
-      <HintPath>..\Assemblies\OrbServerSDK.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="OrbServerSDK, Version=1.0.1434.35613, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\OrbServerSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -153,7 +153,7 @@
     <Compile Include="Server\Items\VirtualCheck.cs" />
     <Compile Include="Server\Items\VirtualHair.cs" />
     <Compile Include="Server\KeywordList.cs" />
-    <Compile Include="Server\Main.cs" />
+    <Compile Include="Server\Core.cs" />
     <Compile Include="Server\Map.cs" />
     <Compile Include="Server\Menus\IMenu.cs" />
     <Compile Include="Server\Menus\ItemListMenu.cs" />

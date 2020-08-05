@@ -271,7 +271,7 @@ namespace Server
 			ConversionTable.Add( typeof( FireElemental ) );
 			ConversionTable.Add( typeof( IceElemental ) );
 			ConversionTable.Add( typeof( PoisonElemental ) );
-			ConversionTable.Add( typeof( ToxicElemental ) );
+			//ConversionTable.Add( typeof( ToxicElemental ) );
 			ConversionTable.Add( typeof( WaterElemental ) );
 			// Monsters Elemental Melee
 			ConversionTable.Add( typeof( EarthElemental ) );
@@ -303,7 +303,7 @@ namespace Server
 			ConversionTable.Add( typeof( Shade ) );
 			ConversionTable.Add( typeof( SkeletalMage ) );
 			ConversionTable.Add( typeof( Spectre ) );
-			ConversionTable.Add( typeof( Spellbinder ) );
+			//ConversionTable.Add( typeof( Spellbinder ) );
 			ConversionTable.Add( typeof( Succubus ) );
 			ConversionTable.Add( typeof( Titan ) );
 			ConversionTable.Add( typeof( Wraith ) );
