@@ -7,7 +7,7 @@
     <OutputType>Exe</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>RunUO</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -28,9 +28,6 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>Server</RootNamespace>
-  </PropertyGroup>
-  <PropertyGroup>
     <ApplicationIcon>runuo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
@@ -38,7 +35,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\</OutputPath>
+    <OutputPath>..\bin</OutputPath>
     <DefineConstants>TRACE;DEBUG;NEWTIMERS;NEWPARENT</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugType>full</DebugType>
@@ -49,7 +46,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>..\</OutputPath>
+    <OutputPath>..\bin</OutputPath>
     <DefineConstants>TRACE;NEWTIMERS;NEWPARENT</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
@@ -63,6 +60,7 @@
   <ItemGroup>
     <Reference Include="OrbServerSDK">
       <HintPath>..\Assemblies\OrbServerSDK.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -71,6 +69,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="UOArchitectInterface">
       <HintPath>..\Assemblies\UOArchitectInterface.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -96,132 +95,135 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AggressorInfo.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Attributes.cs" />
-    <Compile Include="BaseVendor.cs" />
-    <Compile Include="Body.cs" />
-    <Compile Include="ClientVersion.cs" />
-    <Compile Include="Commands.cs" />
-    <Compile Include="ContextMenus\ContextMenu.cs" />
-    <Compile Include="ContextMenus\ContextMenuEntry.cs" />
-    <Compile Include="ContextMenus\OpenBackpackEntry.cs" />
-    <Compile Include="ContextMenus\PaperdollEntry.cs" />
-    <Compile Include="Diagnostics\BaseProfile.cs" />
-    <Compile Include="Diagnostics\GumpProfile.cs" />
-    <Compile Include="Diagnostics\PacketProfile.cs" />
-    <Compile Include="Diagnostics\TargetProfile.cs" />
-    <Compile Include="Diagnostics\TimerProfile.cs" />
-    <Compile Include="Effects.cs" />
-    <Compile Include="EventLog.cs" />
-    <Compile Include="EventSink.cs" />
-    <Compile Include="ExpansionInfo.cs" />
-    <Compile Include="Geometry.cs" />
-    <Compile Include="Guild.cs" />
-    <Compile Include="Gumps\Gump.cs" />
-    <Compile Include="Gumps\GumpAlphaRegion.cs" />
-    <Compile Include="Gumps\GumpBackground.cs" />
-    <Compile Include="Gumps\GumpButton.cs" />
-    <Compile Include="Gumps\GumpCheck.cs" />
-    <Compile Include="Gumps\GumpEntry.cs" />
-    <Compile Include="Gumps\GumpGroup.cs" />
-    <Compile Include="Gumps\GumpHtml.cs" />
-    <Compile Include="Gumps\GumpHtmlLocalized.cs" />
-    <Compile Include="Gumps\GumpImage.cs" />
-    <Compile Include="Gumps\GumpImageTileButton.cs" />
-    <Compile Include="Gumps\GumpImageTiled.cs" />
-    <Compile Include="Gumps\GumpItem.cs" />
-    <Compile Include="Gumps\GumpItemProperty.cs" />
-    <Compile Include="Gumps\GumpLabel.cs" />
-    <Compile Include="Gumps\GumpLabelCropped.cs" />
-    <Compile Include="Gumps\GumpPage.cs" />
-    <Compile Include="Gumps\GumpRadio.cs" />
-    <Compile Include="Gumps\GumpTextEntry.cs" />
-    <Compile Include="Gumps\GumpTextEntryLimited.cs" />
-    <Compile Include="Gumps\GumpTooltip.cs" />
-    <Compile Include="Gumps\RelayInfo.cs" />
-    <Compile Include="HuePicker.cs" />
-    <Compile Include="IAccount.cs" />
-    <Compile Include="IEntity.cs" />
-    <Compile Include="Insensitive.cs" />
-    <Compile Include="Interfaces.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="ItemBounds.cs" />
-    <Compile Include="Items\BaseMulti.cs" />
-    <Compile Include="Items\Container.cs" />
-    <Compile Include="Items\Containers.cs" />
-    <Compile Include="Items\SecureTradeContainer.cs" />
-    <Compile Include="Items\VirtualCheck.cs" />
-    <Compile Include="Items\VirtualHair.cs" />
-    <Compile Include="KeywordList.cs" />
-    <Compile Include="Main.cs" />
-    <Compile Include="Map.cs" />
-    <Compile Include="Menus\IMenu.cs" />
-    <Compile Include="Menus\ItemListMenu.cs" />
-    <Compile Include="Menus\QuestionMenu.cs" />
-    <Compile Include="Mobile.cs" />
-    <Compile Include="Movement.cs" />
-    <Compile Include="MultiData.cs" />
-    <Compile Include="NativeReader.cs" />
-    <Compile Include="Network\BufferPool.cs" />
-    <Compile Include="Network\ByteQueue.cs" />
-    <Compile Include="Network\Compression.cs" />
-    <Compile Include="Network\EncodedPacketHandler.cs" />
-    <Compile Include="Network\EncodedReader.cs" />
-    <Compile Include="Network\Listener.cs" />
-    <Compile Include="Network\MessagePump.cs" />
-    <Compile Include="Network\NetState.cs" />
-    <Compile Include="Network\PacketHandler.cs" />
-    <Compile Include="Network\PacketHandlers.cs" />
-    <Compile Include="Network\PacketReader.cs" />
-    <Compile Include="Network\Packets.cs" />
-    <Compile Include="Network\PacketWriter.cs" />
-    <Compile Include="Network\SendQueue.cs" />
-    <Compile Include="Notoriety.cs" />
-    <Compile Include="ObjectPropertyList.cs" />
-    <Compile Include="Party.cs" />
-    <Compile Include="Persistence\BinaryMemoryWriter.cs" />
-    <Compile Include="Persistence\DualSaveStrategy.cs" />
-    <Compile Include="Persistence\DynamicSaveStrategy.cs" />
-    <Compile Include="Persistence\FileOperations.cs" />
-    <Compile Include="Persistence\FileQueue.cs" />
-    <Compile Include="Persistence\ParallelSaveStrategy.cs" />
-    <Compile Include="Persistence\Persistence.cs" />
-    <Compile Include="Persistence\QueuedMemoryWriter.cs" />
-    <Compile Include="Persistence\SaveMetrics.cs" />
-    <Compile Include="Persistence\SaveStrategy.cs" />
-    <Compile Include="Persistence\SequentialFileWriter.cs" />
-    <Compile Include="Persistence\StandardSaveStrategy.cs" />
-    <Compile Include="Point3DList.cs" />
-    <Compile Include="Poison.cs" />
-    <Compile Include="Prompt.cs" />
-    <Compile Include="QuestArrow.cs" />
-    <Compile Include="Race.cs" />
-    <Compile Include="Random.cs" />
-    <Compile Include="Region.cs" />
-    <Compile Include="ScriptCompiler.cs" />
-    <Compile Include="Sector.cs" />
-    <Compile Include="SecureTrade.cs" />
-    <Compile Include="Serial.cs" />
-    <Compile Include="Serialization.cs" />
-    <Compile Include="Skills.cs" />
-    <Compile Include="Targeting\LandTarget.cs" />
-    <Compile Include="Targeting\MultiTarget.cs" />
-    <Compile Include="Targeting\StaticTarget.cs" />
-    <Compile Include="Targeting\Target.cs" />
-    <Compile Include="Targeting\TargetCancelType.cs" />
-    <Compile Include="Targeting\TargetFlags.cs" />
-    <Compile Include="TileData.cs" />
-    <Compile Include="TileList.cs" />
-    <Compile Include="TileMatrix.cs" />
-    <Compile Include="TileMatrixPatch.cs" />
-    <Compile Include="Timer.cs" />
-    <Compile Include="Utility.cs" />
-    <Compile Include="VirtueInfo.cs" />
-    <Compile Include="World.cs" />
+    <Compile Include="Server\AggressorInfo.cs" />
+    <Compile Include="Server\AssemblyInfo.cs" />
+    <Compile Include="Server\Attributes.cs" />
+    <Compile Include="Server\BaseVendor.cs" />
+    <Compile Include="Server\Body.cs" />
+    <Compile Include="Server\ClientVersion.cs" />
+    <Compile Include="Server\Commands.cs" />
+    <Compile Include="Server\ContextMenus\ContextMenu.cs" />
+    <Compile Include="Server\ContextMenus\ContextMenuEntry.cs" />
+    <Compile Include="Server\ContextMenus\OpenBackpackEntry.cs" />
+    <Compile Include="Server\ContextMenus\PaperdollEntry.cs" />
+    <Compile Include="Server\Diagnostics\BaseProfile.cs" />
+    <Compile Include="Server\Diagnostics\GumpProfile.cs" />
+    <Compile Include="Server\Diagnostics\PacketProfile.cs" />
+    <Compile Include="Server\Diagnostics\TargetProfile.cs" />
+    <Compile Include="Server\Diagnostics\TimerProfile.cs" />
+    <Compile Include="Server\Effects.cs" />
+    <Compile Include="Server\EventLog.cs" />
+    <Compile Include="Server\EventSink.cs" />
+    <Compile Include="Server\ExpansionInfo.cs" />
+    <Compile Include="Server\Geometry.cs" />
+    <Compile Include="Server\Guild.cs" />
+    <Compile Include="Server\Gumps\Gump.cs" />
+    <Compile Include="Server\Gumps\GumpAlphaRegion.cs" />
+    <Compile Include="Server\Gumps\GumpBackground.cs" />
+    <Compile Include="Server\Gumps\GumpButton.cs" />
+    <Compile Include="Server\Gumps\GumpCheck.cs" />
+    <Compile Include="Server\Gumps\GumpEntry.cs" />
+    <Compile Include="Server\Gumps\GumpGroup.cs" />
+    <Compile Include="Server\Gumps\GumpHtml.cs" />
+    <Compile Include="Server\Gumps\GumpHtmlLocalized.cs" />
+    <Compile Include="Server\Gumps\GumpImage.cs" />
+    <Compile Include="Server\Gumps\GumpImageTileButton.cs" />
+    <Compile Include="Server\Gumps\GumpImageTiled.cs" />
+    <Compile Include="Server\Gumps\GumpItem.cs" />
+    <Compile Include="Server\Gumps\GumpItemProperty.cs" />
+    <Compile Include="Server\Gumps\GumpLabel.cs" />
+    <Compile Include="Server\Gumps\GumpLabelCropped.cs" />
+    <Compile Include="Server\Gumps\GumpPage.cs" />
+    <Compile Include="Server\Gumps\GumpRadio.cs" />
+    <Compile Include="Server\Gumps\GumpTextEntry.cs" />
+    <Compile Include="Server\Gumps\GumpTextEntryLimited.cs" />
+    <Compile Include="Server\Gumps\GumpTooltip.cs" />
+    <Compile Include="Server\Gumps\RelayInfo.cs" />
+    <Compile Include="Server\HuePicker.cs" />
+    <Compile Include="Server\IAccount.cs" />
+    <Compile Include="Server\IEntity.cs" />
+    <Compile Include="Server\Insensitive.cs" />
+    <Compile Include="Server\Interfaces.cs" />
+    <Compile Include="Server\Item.cs" />
+    <Compile Include="Server\ItemBounds.cs" />
+    <Compile Include="Server\Items\BaseMulti.cs" />
+    <Compile Include="Server\Items\Container.cs" />
+    <Compile Include="Server\Items\Containers.cs" />
+    <Compile Include="Server\Items\SecureTradeContainer.cs" />
+    <Compile Include="Server\Items\VirtualCheck.cs" />
+    <Compile Include="Server\Items\VirtualHair.cs" />
+    <Compile Include="Server\KeywordList.cs" />
+    <Compile Include="Server\Main.cs" />
+    <Compile Include="Server\Map.cs" />
+    <Compile Include="Server\Menus\IMenu.cs" />
+    <Compile Include="Server\Menus\ItemListMenu.cs" />
+    <Compile Include="Server\Menus\QuestionMenu.cs" />
+    <Compile Include="Server\Mobile.cs" />
+    <Compile Include="Server\Movement.cs" />
+    <Compile Include="Server\MultiData.cs" />
+    <Compile Include="Server\NativeReader.cs" />
+    <Compile Include="Server\Network\BufferPool.cs" />
+    <Compile Include="Server\Network\ByteQueue.cs" />
+    <Compile Include="Server\Network\Compression.cs" />
+    <Compile Include="Server\Network\EncodedPacketHandler.cs" />
+    <Compile Include="Server\Network\EncodedReader.cs" />
+    <Compile Include="Server\Network\Listener.cs" />
+    <Compile Include="Server\Network\MessagePump.cs" />
+    <Compile Include="Server\Network\NetState.cs" />
+    <Compile Include="Server\Network\PacketHandler.cs" />
+    <Compile Include="Server\Network\PacketHandlers.cs" />
+    <Compile Include="Server\Network\PacketReader.cs" />
+    <Compile Include="Server\Network\Packets.cs" />
+    <Compile Include="Server\Network\PacketWriter.cs" />
+    <Compile Include="Server\Network\SendQueue.cs" />
+    <Compile Include="Server\Notoriety.cs" />
+    <Compile Include="Server\ObjectPropertyList.cs" />
+    <Compile Include="Server\Party.cs" />
+    <Compile Include="Server\Persistence\BinaryMemoryWriter.cs" />
+    <Compile Include="Server\Persistence\DualSaveStrategy.cs" />
+    <Compile Include="Server\Persistence\DynamicSaveStrategy.cs" />
+    <Compile Include="Server\Persistence\FileOperations.cs" />
+    <Compile Include="Server\Persistence\FileQueue.cs" />
+    <Compile Include="Server\Persistence\ParallelSaveStrategy.cs" />
+    <Compile Include="Server\Persistence\Persistence.cs" />
+    <Compile Include="Server\Persistence\QueuedMemoryWriter.cs" />
+    <Compile Include="Server\Persistence\SaveMetrics.cs" />
+    <Compile Include="Server\Persistence\SaveStrategy.cs" />
+    <Compile Include="Server\Persistence\SequentialFileWriter.cs" />
+    <Compile Include="Server\Persistence\StandardSaveStrategy.cs" />
+    <Compile Include="Server\Point3DList.cs" />
+    <Compile Include="Server\Poison.cs" />
+    <Compile Include="Server\Prompt.cs" />
+    <Compile Include="Server\QuestArrow.cs" />
+    <Compile Include="Server\Race.cs" />
+    <Compile Include="Server\Random.cs" />
+    <Compile Include="Server\Region.cs" />
+    <Compile Include="Server\ScriptCompiler.cs" />
+    <Compile Include="Server\Sector.cs" />
+    <Compile Include="Server\SecureTrade.cs" />
+    <Compile Include="Server\Serial.cs" />
+    <Compile Include="Server\Serialization.cs" />
+    <Compile Include="Server\Skills.cs" />
+    <Compile Include="Server\Targeting\LandTarget.cs" />
+    <Compile Include="Server\Targeting\MultiTarget.cs" />
+    <Compile Include="Server\Targeting\StaticTarget.cs" />
+    <Compile Include="Server\Targeting\Target.cs" />
+    <Compile Include="Server\Targeting\TargetCancelType.cs" />
+    <Compile Include="Server\Targeting\TargetFlags.cs" />
+    <Compile Include="Server\TileData.cs" />
+    <Compile Include="Server\TileList.cs" />
+    <Compile Include="Server\TileMatrix.cs" />
+    <Compile Include="Server\TileMatrixPatch.cs" />
+    <Compile Include="Server\Timer.cs" />
+    <Compile Include="Server\Utility.cs" />
+    <Compile Include="Server\VirtueInfo.cs" />
+    <Compile Include="Server\World.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="runuo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.Targets" />
   <ProjectExtensions>

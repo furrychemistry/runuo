@@ -222,8 +222,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assemblies", "Assemblies", "{E34C1091-DEE5-4BE0-A41E-E025AD030D86}"
 	ProjectSection(SolutionItems) = preProject
 		Assemblies\OrbServerSDK.dll = Assemblies\OrbServerSDK.dll
-		Assemblies\System.Runtime.Remoting.dll = Assemblies\System.Runtime.Remoting.dll
 		Assemblies\UOArchitectInterface.dll = Assemblies\UOArchitectInterface.dll
+		Assemblies\zlib.dll = Assemblies\zlib.dll
+		Assemblies\zlib32.dll = Assemblies\zlib32.dll
+		Assemblies\zlib64.dll = Assemblies\zlib64.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "etc", "etc", "{8B0D3DD7-65BE-4447-A710-96804387DE5F}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
